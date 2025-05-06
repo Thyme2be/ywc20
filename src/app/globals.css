@@ -10,12 +10,12 @@
     background-image: linear-gradient(to right, #DA6619, #FF0A53);
   }
 
-  .primary-gradient {
+  .shadow-primary-gradient {
     position: relative;
     z-index: 0;
   }
 
-  .primary-gradient::before {
+  .shadow-primary-gradient::before {
     content: '';
     position: absolute;
     inset: 0;
