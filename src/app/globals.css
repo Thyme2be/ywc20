@@ -5,9 +5,14 @@
   --foreground: #ffffff;
 }
 
+@theme {
+  --color-primary: #DA6619;
+  --color-secondary: #FF0A53;
+}
+
 @layer utilities {
   .bg-primary-gradient {
-    background-image: linear-gradient(to right, #DA6619, #FF0A53);
+    background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
   }
 
   .shadow-primary-gradient {
@@ -21,7 +26,7 @@
     inset: 0;
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(to bottom right, #DA6619, #FF0A53);
+    background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
     filter: blur(16px);
     z-index: -1;
   }
