@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" >
-      <body className={`${quantico.className} p-5`}>
+      <body data-theme="main" className={`${quantico.className} p-5`}>
         <Navbar />
         {children}
       </body>

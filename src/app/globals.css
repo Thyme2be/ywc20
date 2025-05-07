@@ -1,4 +1,11 @@
 @import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "main";
+  default: true;
+  --color-primary: #DA6619;
+  --color-secondary: #FF0A53;
+}
 
 :root {
   --background: #000000;
