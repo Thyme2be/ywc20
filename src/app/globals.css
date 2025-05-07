@@ -12,21 +12,18 @@
   --color-passed-green: #40FF00;
   --shadow-box-primary: 0 0 22px #FF0A53;
   --shadow-input-primary: 0 0 5px #FF0A53;
-  --animate-blink: animate-blink 1s step-end infinite;
 
-  @keyframes animate-blink {
-    0% {
+  --animate-blink: blink 1s step-end infinite;
+
+  @keyframes blink {
+    0%, 100% {
       opacity: 1;
     }
-
     50% {
       opacity: 0;
     }
-
-    100% {
-      opacity: 1;
-    }
   }
+  
 
 }
 

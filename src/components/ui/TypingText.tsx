@@ -30,12 +30,12 @@ export default function TypingText({ message }: { message: string }) {
     }, speed);
 
     return () => clearTimeout(timeout);
-  }, [index, isDeleting]);
+  }, [index, isDeleting, fullText]);
 
   return (
     <p className="text-xl text-gradient-primary min-h-[1.5em]">
       {displayedText}
-      <span className=" animate-blink ">|</span>
+      <span className=" text-primary animate-blink ">|</span>
     </p>
   );
 }
