@@ -1,5 +1,9 @@
 @import "tailwindcss";
-@plugin "daisyui";
+
+@plugin "daisyui" {
+  exclude: rootcolor;
+};
+
 @plugin "daisyui/theme" {
   name: "main";
   default: true;
@@ -17,20 +21,26 @@
   --color-primary: #DA6619;
   --color-secondary: #FF0A53;
   --color-passed-green: #40FF00;
+  --shadow-box-passed: 0 0 22px #40FF00;
+  --color-failed: #FF0000;
+  --shadow-box-failed: 0 0 22px #FF0000;
   --shadow-box-primary: 0 0 22px #FF0A53;
   --shadow-input-primary: 0 0 5px #FF0A53;
 
   --animate-blink: blink 1s step-end infinite;
 
   @keyframes blink {
-    0%, 100% {
+
+    0%,
+    100% {
       opacity: 1;
     }
+
     50% {
       opacity: 0;
     }
   }
-  
+
 
 }
 
@@ -39,6 +49,11 @@
   .text-glow-green {
     text-shadow: 0 0 10px #40ff007d,
       0 0 10px #40ff007d
+  }
+
+  .text-glow-red {
+    text-shadow: 0 0 10px #ff00007d,
+      0 0 10px #ff00007d
   }
 
   .gradient-border {
