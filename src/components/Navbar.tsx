@@ -38,7 +38,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="flex justify-center max-sm:justify-between mb-5">
+    <header className="flex justify-center max-sm:justify-between mb-3">
       {/* Mobile nav */}
 
       <Image
@@ -46,7 +46,7 @@ export default function Navbar() {
           width={80}
           height={80}
           alt="ywc-mono-logo"
-          className="hover:cursor-pointer hover:scale-110 duration-100 ease-in-out"
+          className="hover:cursor-pointer hover:scale-110 duration-100 ease-in-out sm:hidden"
         />
 
       <nav className="sm:hidden h-10 w-10 z-10">

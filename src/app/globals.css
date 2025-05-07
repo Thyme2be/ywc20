@@ -3,14 +3,53 @@
 :root {
   --background: #000000;
   --foreground: #ffffff;
+
 }
 
 @theme {
   --color-primary: #DA6619;
   --color-secondary: #FF0A53;
+  --color-passed-green: #40FF00;
+  --shadow-box-primary: 0 0 22px #FF0A53;
+  --shadow-input-primary: 0 0 5px #FF0A53;
+  --animate-blink: animate-blink 1s step-end infinite;
+
+  @keyframes animate-blink {
+    0% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
 }
 
 @layer utilities {
+
+  .text-glow-green {
+    text-shadow: 0 0 10px #40ff007d,
+      0 0 10px #40ff007d
+  }
+
+  .gradient-border {
+    border: 2px solid transparent;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    background-image:
+      linear-gradient(black, black),
+      linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+  }
+
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary via-[#EC3936] to-secondary bg-clip-text text-transparent;
+  }
+
   .bg-primary-gradient {
     background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
   }
@@ -26,8 +65,10 @@
     inset: 0;
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
-    filter: blur(16px);
+    border-radius: 20px;
+    opacity: .5;
+    background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+    filter: blur(10px);
     z-index: -1;
   }
 
@@ -51,6 +92,7 @@
   .hover-underline-animation:hover::after {
     width: 100%;
   }
+
 }
 
 body {

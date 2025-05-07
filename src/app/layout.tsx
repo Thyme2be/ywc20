@@ -25,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={quantico.className}>
-      <body className=" p-5 ">
+    <html lang="en" >
+      <body className={`${quantico.className} p-5`}>
         <Navbar />
         {children}
       </body>
