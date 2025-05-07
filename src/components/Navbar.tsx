@@ -38,8 +38,17 @@ export default function Navbar() {
   };
 
   return (
-    <header className="flex justify-center max-sm:justify-end">
+    <header className="flex justify-center max-sm:justify-between mb-5">
       {/* Mobile nav */}
+
+      <Image
+          src="/logo-ywc20-mono.png"
+          width={80}
+          height={80}
+          alt="ywc-mono-logo"
+          className="hover:cursor-pointer hover:scale-110 duration-100 ease-in-out"
+        />
+
       <nav className="sm:hidden h-10 w-10 z-10">
         <div onClick={handleMenuClick}>
           <Lottie
@@ -55,11 +64,17 @@ export default function Navbar() {
       {/* Mobile drawer */}
       <div
         className={`sm:hidden absolute left-0 top-0 w-full bg-primary-gradient transition-transform duration-300 ease-in-out ${
-          isOpen ? "translate-y-0 shadow-secondary shadow-lg/40 " : "-translate-y-full"
+          isOpen
+            ? "translate-y-0 shadow-secondary shadow-lg/40 "
+            : "-translate-y-full"
         }`}
       >
         <ul className="flex flex-col items-center gap-4 py-6 text-lg font-semibold">
-          <Link href={"/"}><li className={linkClassName} onClick={handleLinkClick}>Home</li></Link>
+          <Link href={"/"}>
+            <li className={linkClassName} onClick={handleLinkClick}>
+              Home
+            </li>
+          </Link>
           <li className={linkClassName}>Major</li>
           <li className={linkClassName}>Sponsors</li>
           <li className={linkClassName}>FAQ</li>
