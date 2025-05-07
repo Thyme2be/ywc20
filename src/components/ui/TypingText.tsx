@@ -33,7 +33,7 @@ export default function TypingText({ message }: { message: string }) {
   }, [index, isDeleting, fullText]);
 
   return (
-    <p className="text-xl text-gradient-primary min-h-[1.5em]">
+    <p className="text-gradient-primary min-h-[1.5em] text-2xl">
       {displayedText}
       <span className=" text-primary animate-blink ">|</span>
     </p>
