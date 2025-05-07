@@ -3,10 +3,10 @@ import TypingText from "@/components/ui/TypingText";
 export default function page() {
   const labelStyle = " text-2xl opacity-70";
   const InputBox =
-    "border gradient-border text-2xl shadow-input-primary h-12 w-72 px-5 ";
+    "border gradient-border text-2xl shadow-input-primary h-12 w-full px-5 ";
 
   return (
-    <main className=" flex flex-col items-center mx-20 ">
+    <main className=" flex flex-col items-center ">
       <header className=" flex justify-center items-center w-full my-12  ">
         <div className=" flex flex-col text-center gap-2 ">
           <h1 className=" text-5xl ">
@@ -23,7 +23,7 @@ export default function page() {
       {/* Form Box */}
       <section>
         <form className=" h-fit w-fit rounded-4xl gradient-border shadow-box-primary px-10 py-12 flex flex-col gap-5 ">
-          <div className=" flex gap-10 ">
+          <div className=" flex gap-10 max-sm:flex-col ">
             {/* First Name */}
             <div className=" flex flex-col gap-1 ">
               <label htmlFor="firstName" className={labelStyle}>
