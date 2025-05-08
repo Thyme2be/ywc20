@@ -16,8 +16,8 @@ const press_Start_2P = Press_Start_2P({
 });
 
 export const metadata: Metadata = {
-  title: "YWC20",
-  description: "Young webmaster camp 20",
+  title: "Young Webmaster Camp 20",
+  description: "Young webmaster camp 20 website made by Trin Chuainugoon",
   keywords: [
     "YWC20",
     "Young webmaster camp 20",
