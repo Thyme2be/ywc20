@@ -41,6 +41,7 @@ export default function Navbar() {
     <header className="flex justify-center max-sm:justify-between mb-3">
       {/* Mobile nav */}
 
+    <Link href={"/"}>
       <Image
         src="/logo-ywc20-mono.png"
         width={80}
@@ -48,6 +49,7 @@ export default function Navbar() {
         alt="ywc-mono-logo"
         className="hover:cursor-pointer hover:scale-110 duration-100 ease-in-out sm:hidden"
       />
+    </Link>
 
       <nav className="sm:hidden h-10 w-10 z-30">
         <div onClick={handleMenuClick}>

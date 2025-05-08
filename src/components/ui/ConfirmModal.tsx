@@ -31,6 +31,8 @@ export default function ConfirmModal({
   const handleConfirm = async () => {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
+    sessionStorage.removeItem("resultData");
+
     try {
       const response = await fetch(apiUrl!, {
         method: "GET",

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Sponsors() {
   return (
@@ -9,21 +10,26 @@ export default function Sponsors() {
       <div className=" mt-16 flex justify-center w-full gap-40 max-lg:gap-20 flex-wrap">
         <div className=" flex flex-col items-center gap-5 ">
           <h1 className=" text-xl opacity-70 ">Organized By</h1>
+          <Link href={"https://www.webmaster.or.th/"}>
+          
           <Image
             src={"/twa_sponsors.png"}
             alt="twa-sponsors"
             height={300}
             width={300}
           />
+          </Link>
         </div>
         <div className=" flex flex-col items-center gap-5 ">
           <h1 className=" text-xl opacity-70 ">Super VIP</h1>
-          <Image
-            src={"/odt_sponsors.png"}
-            alt="odt-sponsors"
-            height={200}
-            width={200}
-          />
+          <Link href={"https://odds.team/"}>
+            <Image
+              src={"/odt_sponsors.png"}
+              alt="odt-sponsors"
+              height={200}
+              width={200}
+            />
+          </Link>
         </div>
       </div>
       <Image
