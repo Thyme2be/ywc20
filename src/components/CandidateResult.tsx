@@ -16,10 +16,8 @@ export default function CandidateResult() {
   const [statusPassed, setStatusPassed] = useState(false);
 
   useEffect(() => {
-    // Check if data exists in sessionStorage first
 
     try {
-      // Otherwise, retrieve data from query params and store in sessionStorage
       const statusPassedRaw = searchParams.get("statusPassed") === "true";
       const fname = searchParams.get("firstName") || "";
       const lname = searchParams.get("lastName") || "";
@@ -31,18 +29,6 @@ export default function CandidateResult() {
       setStatusPassed(statusPassedRaw);
       setMajor(majorRaw);
       setCandidateID(candidateID);
-
-      // Store the data in sessionStorage
-      sessionStorage.setItem(
-        "resultData",
-        JSON.stringify({
-          firstName: fname,
-          lastName: lname,
-          statusPassed: statusPassedRaw,
-          major: majorRaw,
-          candidateID: candidateID,
-        })
-      );
 
       router.replace("/check/result");
     } catch {
