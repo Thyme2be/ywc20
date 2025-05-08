@@ -2,11 +2,11 @@ import Image from "next/image";
 
 export default function Sponsors() {
   return (
-    <section className=" mt-20 h-auto  ">
+    <section className=" h-auto  ">
       <h1 className=" text-center text-4xl shadow-white text-glow-white ">
         SPONSORS
       </h1>
-      <div className=" mt-16 flex justify-center w-full gap-40 flex-wrap">
+      <div className=" mt-16 flex justify-center w-full gap-40 max-lg:gap-20 flex-wrap">
         <div className=" flex flex-col items-center gap-5 ">
           <h1 className=" text-xl opacity-70 ">Organized By</h1>
           <Image

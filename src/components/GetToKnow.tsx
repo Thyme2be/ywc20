@@ -5,7 +5,7 @@ export default function GetToKnow() {
   const descriptionStyle = " pt-2 pl-20 text-lg opacity-70 max-sm:pl-2 ";
 
   return (
-    <section className=" mt-20 w-full flex h-fit  ">
+    <section className=" w-full flex h-fit  ">
       {/* Content */}
       <div className=" w-3/5 max-md:w-full max-sm:flex max-sm:flex-col max-sm:items-center ">
         {/* Get to know */}

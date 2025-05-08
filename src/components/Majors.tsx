@@ -6,7 +6,7 @@ export default function Majors() {
   const webImageStyle = " cursor-pointer hover:scale-105 hover:-translate-y-5 duration-300 "
 
   return (
-    <section className=" mt-20 w-full flex flex-col items-center ">
+    <section className=" w-full flex flex-col items-center ">
       <div className=" bg-primary-gradient px-5 py-3 text-3xl rounded-full shadow-primary-gradient ">
         MAJORS
       </div>
