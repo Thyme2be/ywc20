@@ -56,7 +56,7 @@ export default function Hero() {
       {/* Circle abstract */}
       <Image
         src={"/abstract_circle.png"}
-        alt=" star "
+        alt=" circle "
         width={140}
         height={140}
         className=" absolute -bottom-16 -z-10 max-lg:w-14 max-sm:hidden "

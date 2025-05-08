@@ -1,4 +1,5 @@
 import FAQ from "@/components/FAQ";
+import Footer from "@/components/Footer";
 import GetToKnow from "@/components/GetToKnow";
 import Hero from "@/components/Hero";
 import Majors from "@/components/Majors";
@@ -12,6 +13,7 @@ export default function Home() {
       <Majors />
       <Sponsors />
       <FAQ />
+      <Footer />
     </main>
   );
 }

@@ -5,7 +5,7 @@ export default function GetToKnow() {
   const descriptionStyle = " pt-2 pl-20 text-lg opacity-70 max-sm:pl-2 ";
 
   return (
-    <section className=" w-full flex h-fit  ">
+    <section className=" relative w-full flex h-fit  ">
       {/* Content */}
       <div className=" w-3/5 max-md:w-full max-sm:flex max-sm:flex-col max-sm:items-center ">
         {/* Get to know */}
@@ -64,6 +64,21 @@ export default function GetToKnow() {
       <div className=" flex justify-center items-center w-2/5 max-md:hidden ">
         <Image src={"/laptop.png"} alt="Get to know" width={400} height={400} />
       </div>
+      {/* Circle abstract */}
+      <Image
+        src={"/abstract_circle.png"}
+        alt=" circle "
+        width={100}
+        height={100}
+        className=" absolute bottom-0 left-30 -z-10 max-lg:w-14 "
+      />
+      <Image
+        src={"/abstract_circle.png"}
+        alt=" circle "
+        width={400}
+        height={400}
+        className=" absolute bottom-5 right-10 -z-10 max-lg:hidden "
+      />
     </section>
   );
 }

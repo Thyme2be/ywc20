@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Sponsors() {
   return (
-    <section className=" h-auto  ">
+    <section className=" relative h-auto  ">
       <h1 className=" text-center text-4xl shadow-white text-glow-white ">
         SPONSORS
       </h1>
@@ -26,6 +26,28 @@ export default function Sponsors() {
           />
         </div>
       </div>
+      <Image
+        src={"/abstract_star.png"}
+        alt=" star "
+        width={140}
+        height={140}
+        className=" absolute top-6 right-120 -z-10 max-sm:h-14 max-sm:w-14 rotate-z-45 "
+      />
+      {/* Circle abstract */}
+      <Image
+        src={"/abstract_circle.png"}
+        alt=" circle "
+        width={100}
+        height={100}
+        className=" absolute top-10 left-30 -z-10 max-lg:hidden "
+      />
+      <Image
+        src={"/abstract_circle.png"}
+        alt=" circle "
+        width={100}
+        height={100}
+        className=" absolute -bottom-10 right-10 -z-10 "
+      />
     </section>
   );
 }
