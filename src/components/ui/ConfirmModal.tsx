@@ -13,6 +13,7 @@ interface Person {
   firstName: string;
   lastName: string;
   major: string;
+  interviewRefNo: string; // Add this line
 }
 
 export default function ConfirmModal({
@@ -40,7 +41,6 @@ export default function ConfirmModal({
 
       const data = await response.json();
 
-      // Flatten the data and find the matching person
       const matchedPerson = (Object.values(data).flat() as Person[]).find(
         (person) =>
           person.firstName.toLowerCase() === firstName.toLowerCase() &&
@@ -48,21 +48,30 @@ export default function ConfirmModal({
       );
 
       const statusPassed = matchedPerson ? "true" : "false";
-      const major = matchedPerson ? matchedPerson.major : "";
+      const major = matchedPerson?.major || "";
+      const candidateID = matchedPerson?.interviewRefNo || "";
 
       // Store the data in sessionStorage
       sessionStorage.setItem(
         "resultData",
-        JSON.stringify({ firstName, lastName, statusPassed, major })
+        JSON.stringify({
+          firstName,
+          lastName,
+          statusPassed,
+          major,
+          candidateID,
+        })
       );
 
-      // Navigate to the result page
+      // Navigate to result page with all params
       router.push(
         `/check/result?statusPassed=${statusPassed}&firstName=${encodeURIComponent(
           firstName
-        )}&lastName=${encodeURIComponent(lastName)}&major=${encodeURIComponent(
+        )}&lastName=${encodeURIComponent(
+          lastName
+        )}&major=${encodeURIComponent(
           major
-        )}`
+        )}&candidateID=${encodeURIComponent(candidateID)}`
       );
     } catch (error) {
       console.error("Error fetching data:", error);
