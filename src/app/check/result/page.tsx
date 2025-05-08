@@ -27,7 +27,7 @@ export default function ResultPage() {
 
     // Replace URL to hide query params
     router.replace("/check/result");
-  }, []);
+  }, [router, searchParams]);
 
   const majorDisplayMap: Record<string, string> = {
     web_design: "Web Design",
