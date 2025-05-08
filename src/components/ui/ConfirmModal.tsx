@@ -50,6 +50,13 @@ export default function ConfirmModal({
       const statusPassed = matchedPerson ? "true" : "false";
       const major = matchedPerson ? matchedPerson.major : "";
 
+      // Store the data in sessionStorage
+      sessionStorage.setItem(
+        "resultData",
+        JSON.stringify({ firstName, lastName, statusPassed, major })
+      );
+
+      // Navigate to the result page
       router.push(
         `/check/result?statusPassed=${statusPassed}&firstName=${encodeURIComponent(
           firstName

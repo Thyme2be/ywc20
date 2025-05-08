@@ -15,19 +15,41 @@ export default function ResultPage() {
   const [statusPassed, setStatusPassed] = useState(false);
 
   useEffect(() => {
-    const statusPassedRaw = searchParams.get("statusPassed") === "true";
-    const fname = searchParams.get("firstName") || "";
-    const lname = searchParams.get("lastName") || "";
-    const majorRaw = searchParams.get("major") || "";
+    // Check if data exists in sessionStorage first
+    const storedData = sessionStorage.getItem("resultData");
 
-    setFirstName(fname);
-    setLastName(lname);
-    setStatusPassed(statusPassedRaw);
-    setMajor(majorRaw);
+    if (storedData) {
+      // If data exists in sessionStorage, use it
+      const resultData = JSON.parse(storedData);
+      setFirstName(resultData.firstName);
+      setLastName(resultData.lastName);
+      setStatusPassed(resultData.statusPassed);
+      setMajor(resultData.major);
 
-    // Replace URL to hide query params
-    router.replace("/check/result");
-  }, [router, searchParams]);
+      // Optionally, clear session storage if you want to prevent future use
+      sessionStorage.removeItem("resultData");
+    } else {
+      // Otherwise, retrieve data from query params and store in sessionStorage
+      const statusPassedRaw = searchParams.get("statusPassed") === "true";
+      const fname = searchParams.get("firstName") || "";
+      const lname = searchParams.get("lastName") || "";
+      const majorRaw = searchParams.get("major") || "";
+
+      setFirstName(fname);
+      setLastName(lname);
+      setStatusPassed(statusPassedRaw);
+      setMajor(majorRaw);
+
+      // Store the data in sessionStorage
+      sessionStorage.setItem(
+        "resultData",
+        JSON.stringify({ firstName: fname, lastName: lname, statusPassed: statusPassedRaw, major: majorRaw })
+      );
+
+      // Clean up the URL by removing query parameters
+      router.replace("/check/result");
+    }
+  }, [searchParams, router]);
 
   const majorDisplayMap: Record<string, string> = {
     web_design: "Web Design",
@@ -52,7 +74,7 @@ export default function ResultPage() {
         <h1
           className={`text-4xl max-sm:text-3xl max-sm:mt-5 font-bold ${ColorText} ${ColorTextGlow}`}
         >
-          {statusPassed ? "Congratulations!" : "See you again!"}
+          {statusPassed ? "🎉 Congratulations! 🎉" : "See you again! 👋"}
         </h1>
 
         <h2 className="text-3xl">{`${firstName} ${lastName}`}</h2>
