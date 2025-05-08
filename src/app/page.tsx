@@ -1,5 +1,9 @@
+import Hero from "@/components/Hero";
+
 export default function Home() {
   return (
-    <h1>Home Page</h1>
+    <main className=" mt-5 py-5 px-10 max-sm:px-2 ">
+      <Hero />
+    </main>
   );
 }

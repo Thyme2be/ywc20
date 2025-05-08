@@ -57,7 +57,7 @@ export default function SearchForm() {
       <div className="flex justify-center items-center">
         <button
           type="button"
-          className="hover:shadow-box-primary bg-gradient-primary text-3xl text-white rounded-3xl px-12 py-2 mt-8 cursor-pointer bg-primary-gradient hover:scale-110 duration-150"
+          className="hover:shadow-box-primary text-3xl text-white rounded-3xl px-12 py-2 mt-8 cursor-pointer bg-primary-gradient hover:scale-110 duration-150"
           onClick={handleCheck}
         >
           Check

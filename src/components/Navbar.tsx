@@ -49,7 +49,7 @@ export default function Navbar() {
           className="hover:cursor-pointer hover:scale-110 duration-100 ease-in-out sm:hidden"
         />
 
-      <nav className="sm:hidden h-10 w-10 z-10">
+      <nav className="sm:hidden h-10 w-10 z-30">
         <div onClick={handleMenuClick}>
           <Lottie
             lottieRef={lottieRef}
@@ -63,7 +63,7 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       <div
-        className={`sm:hidden absolute left-0 top-0 w-full bg-primary-gradient transition-transform duration-300 ease-in-out ${
+        className={`sm:hidden absolute left-0 top-0 w-full bg-primary-gradient z-20 transition-transform duration-300 ease-in-out ${
           isOpen
             ? "translate-y-0 shadow-secondary shadow-lg/40 "
             : "-translate-y-full"

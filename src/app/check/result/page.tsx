@@ -13,7 +13,7 @@ export default function page() {
       <section
         className={`relative h-fit w-fit rounded-4xl border-2 ${ColorBorder} text-center px-10 pt-10 pb-5 flex flex-col items-center gap-5`}
       >
-        {/* Congrat or See you */}
+        {/* Congrat || See you */}
         <h1
           className={` text-4xl max-sm:text-3xl max-sm:mt-5 font-bold ${ColorText} ${ColorTextGlow} `}
         >

@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Quantico } from 'next/font/google'
+import { Quantico, Press_Start_2P } from "next/font/google";
 import Navbar from "@/components/Navbar";
 
 const quantico = Quantico({
-  subsets: ['latin'],
-  weight: ['400', '700'],
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+const press_Start_2P = Press_Start_2P({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+  variable: "--font-press-start-2p",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" >
+    <html lang="en" className={`${press_Start_2P.variable}`}>
       <body data-theme="main" className={`${quantico.className} p-5`}>
         <Navbar />
         {children}
