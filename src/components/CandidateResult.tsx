@@ -30,6 +30,7 @@ export default function CandidateResult() {
 
       // Optionally, clear session storage if you want to prevent future use
       sessionStorage.removeItem("resultData");
+      router.replace("/check/result");
     } else {
       // Otherwise, retrieve data from query params and store in sessionStorage
       const statusPassedRaw = searchParams.get("statusPassed") === "true";
@@ -57,7 +58,6 @@ export default function CandidateResult() {
       );
 
       // Clean up the URL by removing query parameters
-      router.replace("/check/result");
     }
   }, [searchParams, router]);
 
