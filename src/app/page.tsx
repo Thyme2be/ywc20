@@ -1,6 +1,7 @@
 import GetToKnow from "@/components/GetToKnow";
 import Hero from "@/components/Hero";
 import Majors from "@/components/Majors";
+import Sponsors from "@/components/Sponsors";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <GetToKnow />
       <Majors />
+      <Sponsors />
     </main>
   );
 }

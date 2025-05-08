@@ -59,6 +59,11 @@
       0 0 10px #ff00007d
   }
 
+  .text-glow-white {
+    text-shadow: 0 0 10px #ffffff7d,
+      0 0 10px #ffffff7d
+  }
+
   .gradient-border {
     border: 2px solid transparent;
     background-origin: border-box;
