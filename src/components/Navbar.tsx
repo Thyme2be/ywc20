@@ -42,12 +42,12 @@ export default function Navbar() {
       {/* Mobile nav */}
 
       <Image
-          src="/logo-ywc20-mono.png"
-          width={80}
-          height={80}
-          alt="ywc-mono-logo"
-          className="hover:cursor-pointer hover:scale-110 duration-100 ease-in-out sm:hidden"
-        />
+        src="/logo-ywc20-mono.png"
+        width={80}
+        height={80}
+        alt="ywc-mono-logo"
+        className="hover:cursor-pointer hover:scale-110 duration-100 ease-in-out sm:hidden"
+      />
 
       <nav className="sm:hidden h-10 w-10 z-30">
         <div onClick={handleMenuClick}>
@@ -70,35 +70,49 @@ export default function Navbar() {
         }`}
       >
         <ul className="flex flex-col items-center gap-4 py-6 text-lg font-semibold">
-          <Link href={"/"}>
-            <li className={linkClassName} onClick={handleLinkClick}>
-              Home
-            </li>
+          <Link href="/" onClick={handleLinkClick}>
+            <li className={linkClassName}>Home</li>
           </Link>
-          <li className={linkClassName}>Major</li>
-          <li className={linkClassName}>Sponsors</li>
-          <li className={linkClassName}>FAQ</li>
+          <Link href="/#majors" onClick={handleLinkClick}>
+            <li className={linkClassName}>Major</li>
+          </Link>
+          <Link href="/#sponsors" onClick={handleLinkClick}>
+            <li className={linkClassName}>Sponsors</li>
+          </Link>
+          <Link href="/#faq" onClick={handleLinkClick}>
+            <li className={linkClassName}>FAQ</li>
+          </Link>
         </ul>
       </div>
 
       {/* Desktop nav */}
       <nav className="max-sm:hidden flex rounded-full items-center bg-primary-gradient shadow-primary-gradient py-3 px-8 gap-5">
         <ul className="flex gap-5 text-xl">
-          <li className={linkClassName}>Home</li>
-          <li className={linkClassName}>Major</li>
+          <Link href="/">
+            <li className={linkClassName}>Home</li>
+          </Link>
+          <Link href="/#majors">
+            <li className={linkClassName}>Major</li>
+          </Link>
         </ul>
 
-        <Image
-          src="/logo-ywc20-mono.png"
-          width={80}
-          height={80}
-          alt="ywc-mono-logo"
-          className="hover:cursor-pointer hover:scale-110 duration-100 ease-in-out"
-        />
+        <Link href="/">
+          <Image
+            src="/logo-ywc20-mono.png"
+            width={80}
+            height={80}
+            alt="ywc-mono-logo"
+            className="hover:cursor-pointer hover:scale-110 duration-100 ease-in-out"
+          />
+        </Link>
 
         <ul className="flex gap-5 text-xl">
-          <li className={linkClassName}>Sponsors</li>
-          <li className={linkClassName}>FAQ</li>
+          <Link href="/#sponsors">
+            <li className={linkClassName}>Sponsors</li>
+          </Link>
+          <Link href="/#faq">
+            <li className={linkClassName}>FAQ</li>
+          </Link>
         </ul>
       </nav>
     </header>

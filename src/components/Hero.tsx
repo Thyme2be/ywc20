@@ -1,11 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
     <section className=" relative ">
       <div className=" flex max-sm:flex-col gap-10 items-center w-full ">
         {/*Hero YWC20 Image */}
-        <div className=" h-fit w-1/2 max-sm:w-full max-sm:flex max-sm:justify-center ">
+        <div className=" h-fit w-1/2 max-sm:w-full flex justify-end ">
           <Image
             src={"/ywc20-logo-main.webp"}
             alt="ywc-main-logo"
@@ -14,8 +15,8 @@ export default function Hero() {
           />
         </div>
         {/* Hero Text */}
-        <div className=" text-center w-1/2 max-sm:w-full">
-          <h1 className=" font-secondary text-2xl ">
+        <div className=" text-start w-1/2 max-sm:w-full max-sm:text-center">
+          <h1 className=" font-secondary text-3xl ">
             Young Webmaster <span className=" whitespace-nowrap ">Camp 20</span>
           </h1>
           <p className=" text-xl mt-2 ">
@@ -27,22 +28,26 @@ export default function Hero() {
         </div>
       </div>
       <div className=" w-full flex max-sm:flex-col justify-center sm:gap-30 max-sm:items-center ">
-        <button
-          type="button"
-          className="hover:shadow-box-primary 
+        <Link href={"/check"}>
+          <button
+            type="button"
+            className="hover:shadow-box-primary 
           text-3xl text-white rounded-4xl 
           px-5 py-3 mt-8 cursor-pointer 
           bg-primary-gradient hover:scale-110 duration-150
           shadow-primary-gradient
           "
-        >
-          Check Eligible
-        </button>
+          >
+            Check Eligible
+          </button>
+        </Link>
         <button
           type="button"
           className="hover:shadow-box-primary text-3xl gradient-border rounded-4xl px-5 py-3 mt-8 max-sm:mt-4 cursor-pointer hover:scale-110 duration-150"
         >
-          <span className=" text-gradient-primary ">What is YWC?</span>
+          <Link href={"/#get-to-know"}>
+            <span className=" text-gradient-primary ">What is YWC?</span>
+          </Link>
         </button>
       </div>
       {/* Star abstract */}

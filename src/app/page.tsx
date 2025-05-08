@@ -7,12 +7,20 @@ import Sponsors from "@/components/Sponsors";
 
 export default function Home() {
   return (
-    <main className=" mt-5 py-5 px-10 flex flex-col gap-20 max-sm:px-2 ">
+    <main className="mt-5 py-5 px-10 flex flex-col gap-20 max-sm:px-2">
       <Hero />
-      <GetToKnow />
-      <Majors />
-      <Sponsors />
-      <FAQ />
+      <section id="get-to-know">
+        <GetToKnow />
+      </section>
+      <section id="majors">
+        <Majors />
+      </section>
+      <section id="sponsors">
+        <Sponsors />
+      </section>
+      <section id="faq">
+        <FAQ />
+      </section>
       <Footer />
     </main>
   );

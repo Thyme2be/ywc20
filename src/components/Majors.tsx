@@ -12,14 +12,14 @@ export default function Majors() {
         MAJORS
       </div>
 
-      <div className=" flex justify-center items-center w-full mt-20 gap-14 flex-wrap ">
+      <div className=" flex justify-center items-center w-full mt-20 gap-18 flex-wrap ">
         {/* Web Design */}
         <div>
           <Image
             src={"/web_design.png"}
             alt="web-design"
-            width={200}
-            height={200}
+            width={300}
+            height={300}
             className={webImageStyle}
           />
           <h1 className={webTitleStyle}>
@@ -31,8 +31,8 @@ export default function Majors() {
           <Image
             src={"/web_programming.png"}
             alt="web-programming"
-            width={200}
-            height={200}
+            width={300}
+            height={300}
             className={webImageStyle}
           />
           <h1 className={webTitleStyle}>
@@ -44,8 +44,8 @@ export default function Majors() {
           <Image
             src={"/web_marketing.png"}
             alt="web-marketing"
-            width={200}
-            height={200}
+            width={300}
+            height={300}
             className={webImageStyle}
           />
           <h1 className={webTitleStyle}>
@@ -57,8 +57,8 @@ export default function Majors() {
           <Image
             src={"/web_content.png"}
             alt="web-content"
-            width={200}
-            height={200}
+            width={300}
+            height={300}
             className={webImageStyle}
           />
           <h1 className={webTitleStyle}>

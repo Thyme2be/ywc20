@@ -3,7 +3,7 @@ import TypingText from "@/components/ui/TypingText";
 
 export default function Page() {
   return (
-    <main className=" flex flex-col items-center ">
+    <main className=" flex flex-col items-center h-screen ">
       <header className=" flex justify-center items-center w-full my-12  ">
         <div className=" flex flex-col text-center gap-2 ">
           <h1 className=" text-5xl ">

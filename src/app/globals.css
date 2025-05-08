@@ -19,6 +19,10 @@
 
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme {
   --font-secondary: var(--font-press-start-2p);
   --color-primary: #DA6619;
