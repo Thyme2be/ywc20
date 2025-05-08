@@ -51,25 +51,11 @@ export default function ConfirmModal({
       const major = matchedPerson?.major || "";
       const candidateID = matchedPerson?.interviewRefNo || "";
 
-      // Store the data in sessionStorage
-      sessionStorage.setItem(
-        "resultData",
-        JSON.stringify({
-          firstName,
-          lastName,
-          statusPassed,
-          major,
-          candidateID,
-        })
-      );
-
       // Navigate to result page with all params
       router.push(
         `/check/result?statusPassed=${statusPassed}&firstName=${encodeURIComponent(
           firstName
-        )}&lastName=${encodeURIComponent(
-          lastName
-        )}&major=${encodeURIComponent(
+        )}&lastName=${encodeURIComponent(lastName)}&major=${encodeURIComponent(
           major
         )}&candidateID=${encodeURIComponent(candidateID)}`
       );

@@ -17,21 +17,8 @@ export default function CandidateResult() {
 
   useEffect(() => {
     // Check if data exists in sessionStorage first
-    const storedData = sessionStorage.getItem("resultData");
 
-    if (storedData) {
-      // If data exists in sessionStorage, use it
-      const resultData = JSON.parse(storedData);
-      setFirstName(resultData.firstName);
-      setLastName(resultData.lastName);
-      setStatusPassed(resultData.statusPassed);
-      setMajor(resultData.major);
-      setCandidateID(resultData.candidateID);
-
-      // Optionally, clear session storage if you want to prevent future use
-      sessionStorage.removeItem("resultData");
-      router.replace("/check/result");
-    } else {
+    try {
       // Otherwise, retrieve data from query params and store in sessionStorage
       const statusPassedRaw = searchParams.get("statusPassed") === "true";
       const fname = searchParams.get("firstName") || "";
@@ -57,9 +44,11 @@ export default function CandidateResult() {
         })
       );
 
-      // Clean up the URL by removing query parameters
+      router.replace("/check/result");
+    } catch {
+      console.error("ERROR DATA LOST");
     }
-  }, [searchParams, router]);
+  }, []);
 
   const majorDisplayMap: Record<string, string> = {
     web_design: "Web Design",
