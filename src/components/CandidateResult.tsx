@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa6";
+import ListPrepareModal from "./ui/ListPrepareModal";
 
 export default function CandidateResult() {
   const router = useRouter();
@@ -14,6 +15,7 @@ export default function CandidateResult() {
   const [major, setMajor] = useState("");
   const [candidateID, setCandidateID] = useState("");
   const [statusPassed, setStatusPassed] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
 
@@ -52,7 +54,7 @@ export default function CandidateResult() {
   const ColorTextGlow = statusPassed ? "text-glow-green" : "text-glow-red";
 
   return (
-    <main className="flex justify-center items-center mt-10 max-sm:mt-20">
+    <main className="flex justify-center h-screen mt-20 max-sm:mt-20">
       <section
         className={`relative h-fit w-fit rounded-4xl border-2 ${ColorBorder} text-center px-10 pt-10 pb-5 flex flex-col items-center gap-5`}
       >
@@ -88,11 +90,14 @@ export default function CandidateResult() {
             <p className="text-2xl max-sm:text-xl text-gradient-primary">
               Welcome to Young Webmaster Camp 20!
             </p>
-            <p className="text-xl underline cursor-pointer hover:text-blue-300 duration-100 ease-in-out">
+            <p onClick={() => setShowModal(true)} className="text-xl underline cursor-pointer hover:text-blue-300 duration-100 ease-in-out">
               Check preparation list
             </p>
           </div>
         )}
+
+        {showModal && <ListPrepareModal onClose={() => setShowModal(false)} />}
+
 
         {!statusPassed && (
           <div>
