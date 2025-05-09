@@ -11,6 +11,9 @@
   default: true;
   --color-primary: #DA6619;
   --color-secondary: #FF0A53;
+  --color-base-100: oklch(25.33% .016 252.42);
+  --color-base-200: oklch(25.33% .016 252.42);
+  --color-base-300: oklch(25.33% .016 252.42);
 }
 
 :root {
