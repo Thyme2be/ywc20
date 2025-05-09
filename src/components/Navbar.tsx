@@ -38,7 +38,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="flex justify-center max-sm:justify-between mb-3">
+    <header className="flex justify-center max-sm:justify-between mb-3 sticky sm:top-3 top-0 max-sm:bg-black z-10">
       {/* Mobile nav */}
 
     <Link href={"/"}>
@@ -47,11 +47,11 @@ export default function Navbar() {
         width={80}
         height={80}
         alt="ywc-mono-logo"
-        className="hover:cursor-pointer hover:scale-110 duration-100 ease-in-out sm:hidden"
+        className="hover:cursor-pointer hover:scale-110 duration-100 ease-in-out sm:hidden py-2"
       />
     </Link>
 
-      <nav className="sm:hidden h-10 w-10 z-30">
+      <nav className="sm:hidden h-10 w-10 z-30 py-2">
         <div onClick={handleMenuClick}>
           <Lottie
             lottieRef={lottieRef}
@@ -65,7 +65,7 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       <div
-        className={`sm:hidden absolute left-0 top-0 w-full bg-primary-gradient z-20 transition-transform duration-300 ease-in-out ${
+        className={`sm:hidden absolute left-0 -top-5 w-full bg-primary-gradient z-20 transition-transform duration-300 ease-in-out ${
           isOpen
             ? "translate-y-0 shadow-secondary shadow-lg/40 "
             : "-translate-y-full"
