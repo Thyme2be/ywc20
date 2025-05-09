@@ -13,7 +13,7 @@ interface Person {
   firstName: string;
   lastName: string;
   major: string;
-  interviewRefNo: string; // Add this line
+  interviewRefNo: string;
 }
 
 export default function ConfirmModal({
